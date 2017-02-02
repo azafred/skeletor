@@ -14,9 +14,9 @@ setup(
     version='0.1.0',
     description='Sample package for Python-Guide.org',
     long_description=readme,
-    author='Kenneth Reitz',
-    author_email='me@kennethreitz.com',
-    url='https://github.com/kennethreitz/samplemod',
+    author='Fred Vassard',
+    author_email='azafred@gmail.com',
+    url='https://github.com/azafred/samplemod',
     license=license,
     packages=find_packages(exclude=('tests', 'docs'))
 )
