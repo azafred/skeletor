@@ -3,3 +3,6 @@ init:
 
 test:
 	nosetests tests
+
+install:
+	python setup.py install
