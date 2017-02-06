@@ -1,6 +1,12 @@
 # -*- coding: utf-8 -*-
-
+import os
 from setuptools import setup, find_packages
+
+
+def read(*paths):
+    """Build a file path from *paths* and return the contents."""
+    with open(os.path.join(*paths), 'r') as f:
+        return f.read()
 
 
 with open('README.rst') as f:
@@ -18,6 +24,20 @@ setup(
     author_email='azafred@gmail.com',
     url='https://github.com/azafred/samplemod',
     license=license,
-    packages=find_packages(exclude=('tests', 'docs'))
+    packages=find_packages(exclude=('tests', 'docs')),
+    install_requires=['pyyaml', 'quik', 'pyobjc-framework-Cocoa'],
+    tests_require=['nose', 'testfixtures', 'mock'],
+    test_suite="nose.collector",
+    entry_points={
+        'console_scripts': [
+          'sample = sample.main:main',
+        ],
+      },
+      classifiers=[
+        'Topic :: Utilities',
+        'Programming Language :: Python',
+        'Operating System :: MacOS',
+      ],
+     )
 )
 
