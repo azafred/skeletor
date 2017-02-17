@@ -10,7 +10,7 @@ fi
 # Replacing every occurence of Sample with the project name.
 echo "Finding all the occurences of 'sample' and replacing them with $1..."
 for f in `rg sample -l`; do 
-    sed -i.bak "s/sample/$1/" $f
+    sed -i.bak "s/sample/$1/i" $f
     find ./ -name '*.bak' -delete
 done
 
