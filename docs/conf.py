@@ -1,10 +1,12 @@
-import sys, os
+import sys, os, subprocess
 from recommonmark.parser import CommonMarkParser
 app_path = os.path.abspath('../sample')
-print app_path
 sys.path.insert(0, app_path)
 print sys.path
-
+try:
+    version_git = subprocess.check_output(["git", "describe", "--tags"]).rstrip()
+except:
+    version_git = '0.0.0'
 extensions = []
 source_parsers = {
     '.md': CommonMarkParser,
@@ -14,8 +16,8 @@ source_suffix = ['.rst', '.md']
 master_doc = 'index'
 project = u'sample'
 copyright = u'2012, Fred Vassard'
-version = 'v0.0.1'
-release = 'v0.0.1'
+version = version_git
+release = version_git
 exclude_patterns = ['_build']
 pygments_style = 'pastie'
 html_theme = 'agogo'
