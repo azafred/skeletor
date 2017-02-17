@@ -1,7 +1,7 @@
 # Sample
 
 ## Purpose
-The purpose is to...
+
 
 
 ```
@@ -24,10 +24,4 @@ The purpose is to...
    '*jgs/     |       /    |      ;*;
         `""""`        `""""`     ;'
 ```
-
-```python
-from blah import blah
-```
-
-Also ```in_txt```
 

@@ -12,7 +12,7 @@ exec(open('loony/version.py').read())
 setup(
     name='sample',
     version=__version__,
-    description='Sample package for Python-Guide.org',
+    description='Sample package',
     long_description=readme,
     author='Fred Vassard',
     author_email='azafred@gmail.com',
