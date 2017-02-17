@@ -14,3 +14,4 @@ for f in `rg myproj -l`; do
     find ./ -name '*.bak' -delete
 done
 
+touch initialized
