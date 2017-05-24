@@ -18,7 +18,7 @@ VNUM3=$((VNUM3+1))
 NEW_TAG="$VNUM1.$VNUM2.$VNUM3"
 
 echo "Updating $VERSION to $NEW_TAG"
-
+echo "__version__ = $NEW_TAG" > sample/version.py
 #get current hash and see if it already has a tag
 GIT_COMMIT=`git rev-parse HEAD`
 NEEDS_TAG=`git describe --contains $GIT_COMMIT 2>/dev/null`

@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from setuptools import setup, find_packages
+from sample.version import __version__
 
 with open('README.rst') as f:
     readme = f.read()
@@ -7,7 +8,8 @@ with open('README.rst') as f:
 with open('LICENSE') as f:
     license = f.read()
 
-exec(open('loony/version.py').read())
+with open('requirements.txt') as f:
+    required = f.read().splitlines()
 
 setup(
     name='sample',
@@ -16,22 +18,21 @@ setup(
     long_description=readme,
     author='Fred Vassard',
     author_email='azafred@gmail.com',
-    url='https://github.com/azafred/samplemod',
+    url='https://github.com/azafred/sample',
     license=license,
     packages=find_packages(exclude=('tests', 'docs')),
-    install_requires=['pyyaml', 'quik', 'pyobjc-framework-Cocoa'],
+    install_requires=required,
     tests_require=['nose', 'testfixtures', 'mock'],
     test_suite="nose.collector",
     entry_points={
         'console_scripts': [
-          'sample = sample.main:main',
-        ],
-      },
-      classifiers=[
+            'sample = sample.main:main'
+        ]
+    },
+    classifiers=[
         'Topic :: Utilities',
         'Programming Language :: Python',
-        'Operating System :: MacOS',
-      ],
-     )
+        'Operating System :: MacOS'
+    ]
 )
 
