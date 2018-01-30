@@ -1,10 +1,8 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 import argparse
 import logging
-import httplib
-
-from settings import *
+import config
 from version import __version__
 
 
@@ -23,14 +21,13 @@ def main():
 
     args = parser.parse_args()
     if args.verbose:
-        httplib.HTTPConnection.debuglevel = 1
+        print("verbose")
         logging.basicConfig(level=logging.INFO)
         logging.getLogger().setLevel(logging.INFO)
         requests_log = logging.getLogger("requests.packages.urllib3")
         requests_log.setLevel(logging.INFO)
         requests_log.propagate = True
     if args.debug:
-        httplib.HTTPConnection.debuglevel = 1
         logging.basicConfig(level=logging.DEBUG)
         logging.getLogger().setLevel(logging.DEBUG)
         requests_log = logging.getLogger("requests.packages.urllib3")
@@ -38,10 +35,12 @@ def main():
         requests_log.propagate = True
     if args.version:
         show_version()
+    config.verbose = args.verbose
+    config.debug = args.debug
 
 
 def show_version():
-    print "Sample version %s " % __version__
+    print("sample version {} ".format(__version__))
 
 
 if __name__ == '__main__':
