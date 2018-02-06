@@ -1,2 +1,0 @@
-debug=False
-verbose=False

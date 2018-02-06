@@ -18,7 +18,7 @@
             "debugOptions": [
                 "RedirectOutput"
             ],
-            "args": ["--version"]
+            "args": ["--version", "--verbose"]
         },
         {
             "name": "Python: Attach",
